@@ -179,10 +179,6 @@ Settings replaced into `/usr/local/etc/php/conf.d/default-php.ini` file (`php.in
 - `PHP_FPM_GROUP_ID`
 - `PHP_FPM_USER`
 - `PHP_FPM_GROUP`
-- `PHALCON_VERSION`
-- `PHP_VERSION`
-- `PHP_FPM_ERROR`
-- `PHP_ERROR`
 
 `addgroup -S -g $PHP_FPM_GROUP_ID $PHP_FPM_GROUP`
 `adduser -S -D -H -G $PHP_FPM_GROUP -u $PHP_FPM_USER_ID $PHP_FPM_USER`
