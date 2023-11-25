@@ -6,6 +6,10 @@ LABEL Maintainer="Jose Quintana <joseluisq.net>" \
 # Composer - https://getcomposer.org/download/
 ARG COMPOSER_VERSION="2.6.5"
 ARG COMPOSER_SUM="9a18e1a3aadbcb94c1bafd6c4a98ff931f4b43a456ef48575130466e19f05dd6"
+ARG PHP_FPM_USER_ID
+ARG PHP_FPM_GROUP_ID
+ARG PHP_FPM_USER
+ARG PHP_FPM_GROUP
 
 # Swoole - https://github.com/swoole/swoole-src
 ARG SWOOLE_VERSION="5.1.0"
@@ -44,14 +48,17 @@ RUN set -eux \
         tzdata \
         unixodbc \
         vips \
-        yaml
-
+        yaml \
+#############################################
+### Add group / group id and user / user id
+#############################################
+addgroup -S -g $PHP_FPM_GROUP_ID $PHP_FPM_GROUP \
+adduser -S -D -H -G $PHP_FPM_GROUP -u $PHP_FPM_USER_ID $PHP_FPM_USER \
 #############################################
 ### Install and enable PHP extensions
 #############################################
-
 # Development dependencies
-RUN set -eux \
+    set -eux \
     && apk add --no-cache --virtual .build-deps \
         autoconf \
         bzip2-dev \
