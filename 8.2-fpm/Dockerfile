@@ -6,10 +6,10 @@ LABEL Maintainer="Jose Quintana <joseluisq.net>" \
 # Composer - https://getcomposer.org/download/
 ARG COMPOSER_VERSION="2.6.5"
 ARG COMPOSER_SUM="9a18e1a3aadbcb94c1bafd6c4a98ff931f4b43a456ef48575130466e19f05dd6"
-ARG PHP_FPM_USER_ID
-ARG PHP_FPM_GROUP_ID
-ARG PHP_FPM_USER
-ARG PHP_FPM_GROUP
+ARG PHP_FPM_USER_ID=1000
+ARG PHP_FPM_GROUP_ID=1000
+ARG PHP_FPM_USER=www
+ARG PHP_FPM_GROUP=www
 
 # Swoole - https://github.com/swoole/swoole-src
 ARG SWOOLE_VERSION="5.1.0"
