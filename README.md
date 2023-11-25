@@ -173,6 +173,16 @@ Settings replaced into `/usr/local/etc/php/conf.d/default-php.ini` file (`php.in
 - `PHP_EXPOSE_PHP=On`
 - `PHP_SESSION_GC_MAXLIFETIME=1440`
 
+### Environment
+
+- `PHP_FPM_USER_ID`
+- `PHP_FPM_GROUP_ID`
+- `PHP_FPM_USER`
+- `PHP_FPM_GROUP`
+
+`addgroup -S -g $PHP_FPM_GROUP_ID $PHP_FPM_GROUP`
+`adduser -S -D -H -G $PHP_FPM_GROUP -u $PHP_FPM_USER_ID $PHP_FPM_USER`
+
 ## Docker Compose Examples
 
 [docker-compose](https://docs.docker.com/compose/) examples for [Nginx](https://hub.docker.com/_/nginx) and [Apache](https://hub.docker.com/_/httpd) servers can be found under the [./examples](./examples) directory.
