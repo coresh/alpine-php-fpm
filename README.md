@@ -173,7 +173,7 @@ Settings replaced into `/usr/local/etc/php/conf.d/default-php.ini` file (`php.in
 - `PHP_EXPOSE_PHP=On`
 - `PHP_SESSION_GC_MAXLIFETIME=1440`
 
-### Environment
+### Environment v^8.2.12
 
 - `PHP_FPM_USER_ID`
 - `PHP_FPM_GROUP_ID`
